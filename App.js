@@ -8,6 +8,7 @@
 
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
+import {Row, Col} from "./src/components";
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -20,30 +21,54 @@ type Props = {};
 export default class App extends Component<Props> {
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
-        <Text style={styles.instructions}>To get started, edit App.js</Text>
-        <Text style={styles.instructions}>{instructions}</Text>
-      </View>
+      <Row size={12}>
+        <Col size={4}>
+          <Col size={12}>
+            <Row size={4}></Row>
+            <Row size={4}></Row>
+            <Row size={4}></Row>
+          </Col>
+        </Col>
+        <Col size={4}>
+        <Col size={12}>
+            <Row size={4}></Row>
+            <Row size={4}></Row>
+            <Row size={4}></Row>
+          </Col>
+        </Col>
+        <Col size={4}>
+        <Col size={12}>
+            <Row size={4}></Row>
+            <Row size={4}></Row>
+            <Row size={4}></Row>
+          </Col>
+        </Col>
+      </Row>
+
     );
   }
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+  row: {
+    flex: 12,
+    backgroundColor: '#F5FCFF',
+    flexDirection: 'row'
+  },
+  col4: {
+    flex: 4,
+    backgroundColor: '#FF0000',
+    borderWidth: 1,
+    borderColor: '#000000'
+  },
+  col: {
+    flex: 12,
     backgroundColor: '#F5FCFF',
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+  row4: {
+    flex: 4,
+    backgroundColor: '#FF0000',
+    borderWidth: 1,
+    borderColor: '#000000'
+  }
 });
